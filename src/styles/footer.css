@@ -1,0 +1,20 @@
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  color: #d63384;
+  opacity: 0.9;
+  margin-top: auto; /* pushes footer to bottom */
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
+}

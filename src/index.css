@@ -1,0 +1,181 @@
+/* ---------- Global Reset ---------- */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffe6eb; /* cute pink theme */
+  overflow-x: hidden; /* remove side scroll */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Every page fills space between header and footer */
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 20px 0;
+  font-size: clamp(0.75rem, 1vw, 0.9rem);
+  color: #d63384;
+  opacity: 0.9;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Cute fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Text Styling ---------- */
+h1, h2, .title {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  text-align: center;
+  color: #c2185b;
+}
+
+p, .subtitle {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  text-align: center;
+  color: #4a4a4a;
+}
+
+/* ---------- Back to Home Button ---------- */
+.back-home-wrapper {
+  margin-bottom: 1rem;
+}
+
+.back-home-btn {
+  background-color: #ffb3d9;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: clamp(6px, 1.2vw, 10px) clamp(14px, 2vw, 24px);
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.back-home-btn:hover {
+  background-color: #ff99cc;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(255, 153, 204, 0.4);
+}
+
+/* ---------- Responsive Layout ---------- */
+
+/* 📱 Mobile + Tablet (below 900px) */
+@media (max-width: 900px) {
+  .container {
+    padding: 10px;
+  }
+
+  .row.g-4.mt-4 {
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  .row.g-4.mt-4 > div {
+    width: 90% !important;
+    margin-bottom: 20px;
+  }
+
+  .footer {
+    font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+    padding: 15px 0;
+  }
+
+  /* Back to Home centered on small devices */
+  .back-home-wrapper {
+    text-align: center;
+  }
+}
+
+/* 💻 Desktop (above 900px) */
+@media (min-width: 901px) {
+  .container {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer {
+    font-size: clamp(0.8rem, 1vw, 1rem);
+  }
+
+  /* Back to Home stays left */
+  .back-home-wrapper {
+    text-align: left;
+  }
+}
+/* 🌸 Cute Save Button */
+.save-btn {
+  background-color: #ff66b2;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 25px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3);
+}
+
+.save-btn:hover {
+  background-color: #ff4da6;
+  transform: scale(1.05);
+}
+
+/* 💫 Disabled state */
+.save-btn:disabled {
+  background-color: #ffd6e8;
+  color: #aaa;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* ✨ Saved animation (soft pulse) */
+.saved {
+  animation: savedPulse 1.8s ease-in-out;
+  box-shadow: 0 0 25px #ff99cc, 0 0 50px #ffb3d9;
+}
+
+@keyframes savedPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px #ff99cc;
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 35px #ffb3d9, 0 0 70px #ff66b2;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px transparent;
+  }
+}

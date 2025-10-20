@@ -1,0 +1,182 @@
+body {
+  background: linear-gradient(135deg, #ffd6e0 0%, #ffeef5 100%);
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  color: #5a4a4a;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🌸 Titles & Text */
+.title {
+  color: #ff5b8f;
+  font-weight: 700;
+  text-shadow: 0 1px 2px #fff;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #8b5e83;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* 🌷 Cards */
+.sweet-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #ffb6c1;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  padding: 1rem;
+}
+
+.sweet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(255, 182, 193, 0.4);
+}
+
+/* 🌸 Buttons */
+.btn-pink {
+  background-color: #ff80ab;
+  border: none;
+  color: white;
+  font-weight: 500;
+  border-radius: 25px;
+  padding: 8px 18px;
+  transition: 0.3s ease;
+}
+
+.btn-pink:hover {
+  background-color: #ff5c8d;
+}
+
+.btn-purple {
+  background-color: #c084fc;
+  border: none;
+  color: white;
+  font-weight: 500;
+  border-radius: 25px;
+  padding: 8px 18px;
+  transition: 0.3s ease;
+}
+
+.btn-purple:hover {
+  background-color: #a855f7;
+}
+
+/* 🌺 List items */
+.list-item {
+  background: #fff5f8;
+  margin-bottom: 6px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  word-break: break-word;
+}
+
+/* 💕 Text colors */
+.text-pink {
+  color: #ff5c8d;
+}
+.text-purple {
+  color: #b367f1;
+}
+
+/* ✨ Animations */
+.fade-in {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🌷 Tulip background */
+body::before,
+body::after {
+  content: "🌷🌷🌷";
+  font-size: 45px;
+  opacity: 0.08;
+  position: fixed;
+  z-index: -1;
+}
+
+body::before {
+  top: 15%;
+  left: 8%;
+  transform: rotate(-20deg);
+}
+
+body::after {
+  bottom: 10%;
+  right: 8%;
+  transform: rotate(20deg);
+}
+
+/* 📱 Responsive Design (for Realme C35 and other phones) */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .sweet-card {
+    margin: 10px;
+    padding: 0.8rem;
+  }
+
+  .btn-pink,
+  .btn-purple {
+    font-size: 0.9rem;
+    padding: 7px 14px;
+  }
+
+  body::before,
+  body::after {
+    font-size: 30px;
+    opacity: 0.06;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .sweet-card {
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(255, 182, 193, 0.2);
+  }
+
+  .list-item {
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+
+  body::before,
+  body::after {
+    display: none; /* hide tulip bg for smaller screens to avoid clutter */
+  }
+}
